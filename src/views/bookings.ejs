@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>My Bookings</h1>
+    <ul>
+        <% bookings.forEach(booking=> { %>
+            <li>
+                <strong>Hotel:</strong>
+                <%= booking.hotelId.name %>
+                    (Rooms: <%= booking.roomsBooked %>,
+                        Check-in: <%= booking.checkInDate %>,
+                            Check-out: <%= booking.checkOutDate %>)
+                                <form action="/cancel-booking/<%= booking._id %>" method="POST">
+                                    <button type="submit">Cancel</button>
+                                </form>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Room</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>Book a Room at <%= hotel.name %>
+    </h1>
+    <form action="/confirm-booking" method="POST">
+        <input type="hidden" name="hotelId" value="<%= hotel._id %>">
+        <label>Check-in Date:</label>
+        <input type="date" name="checkInDate" required>
+        <label>Check-out Date:</label>
+        <input type="date" name="checkOutDate" required>
+        <label>Number of Rooms:</label>
+        <input type="number" name="roomsBooked" min="1" required>
+        <button type="submit">Confirm Booking</button>
+    </form>
+</body>
+
+</html>
